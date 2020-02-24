@@ -14,6 +14,12 @@ class Core
     public function __construct()
     {
         $url = $this->getUrl();
+        // set up the controller
+        if(file_exists('../app/controllers/'.ucwords($url[0]).'.php')){
+            $this->currentController = ucwords($url[0]);
+            unset($url[0]);
+        }
+
         echo '<pre>';
         print_r($url);
         echo '</pre>';
