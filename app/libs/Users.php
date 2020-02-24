@@ -3,5 +3,7 @@
 
 class Users
 {
+    public function login(){
 
+    }
 }
