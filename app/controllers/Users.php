@@ -43,9 +43,7 @@ class Users extends Controller
             } else if($data['pass'] != $data['pass2']){
                 $data['pass2_err'] = 'Passwords do not match';
             }
-            echo '<pre>';
-            print_r($data);
-            echo '</pre>';
+
             $this->view('users/register', $data);
         } else {
             $this->view('users/register');

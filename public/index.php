@@ -2,4 +2,4 @@
 
 $init = new Core();
 
-
+$db = new Database();
