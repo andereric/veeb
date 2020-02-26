@@ -6,21 +6,25 @@
             <h2>Create an Account</h2>
             <form action="<?php echo URLROOT;?>/users/register" method="post">
                 <div class="form-group">
-                    <label for="name">Name: <sup></sup></label>
-                    <input type="text" id="name">
+                    <label for="name">Name: <sup>*</sup></label>
+                    <input type="text" id="name" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for="email">E-mail: <sup></sup></label>
-                    <input type="text" id="email">
+                    <label for="email">Email: <sup>*</sup></label>
+                    <input type="text" id="email" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for="pass">Password <sup></sup></label>
-                    <input type="password" id="pass">
+                    <label for="pass">Password: <sup>*</sup></label>
+                    <input type="password" id="pass" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for="pass2">Confirm Password <sup></sup></label>
-                    <input type="password" id="pass2">
-
+                    <label for="pass2">Confirm password: <sup>*</sup></label>
+                    <input type="password" id="pass2" class="form-control">
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <input type="submit" value="Register" class="btn btn-block btn-info ">
+                    </div>
                 </div>
             </form>
         </div>
