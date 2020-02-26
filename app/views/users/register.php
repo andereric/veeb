@@ -1,5 +1,5 @@
 <?php require_once APPROOT.'/views/inc/header.php';?>
-<!-- register form -->
+<!-- register form uus -->
 <div class="row">
     <div class="col-md-6 mx-auto">
         <div class="card card-body bg-light mt-5">
