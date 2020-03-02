@@ -32,12 +32,11 @@ class Users extends Controller
                 $data['name_err'] = 'Please enter the name';
             }
             // validate email
-            if(empty($data['email'])) {
+            if(empty($data['email'])){
                 $data['email_err'] = 'Please enter the email';
-            } else if ($this->userModel->findUserByEmail($data['email'])){
+            } else if($this->userModel->findUserByEmail($data['email'])){
                 $data['email_err'] = 'Email is already taken';
             }
-
             // validate password
             if(empty($data['pass'])){
                 $data['pass_err'] = 'Please enter the password';
@@ -50,7 +49,6 @@ class Users extends Controller
             } else if($data['pass'] != $data['pass2']){
                 $data['pass2_err'] = 'Passwords do not match';
             }
-
             $this->view('users/register', $data);
         } else {
             $this->view('users/register');
