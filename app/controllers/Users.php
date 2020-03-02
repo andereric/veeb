@@ -49,7 +49,16 @@ class Users extends Controller
             } else if($data['pass'] != $data['pass2']){
                 $data['pass2_err'] = 'Passwords do not match';
             }
-            $this->view('users/register', $data);
+            // if errors are empty - register user
+            if(empty($data['name_err']) and empty($data['email_err']) and empty($data['pass_err']) and empty($data['pass2_err'])){
+                if($this->userModel->register($data)){
+                    header('Location: '.URLROOT.'/users/login');
+                } else {
+                    die('Sometrhing went wrong');
+                }
+            } else {
+                $this->view('users/register', $data);
+            }
         } else {
             $this->view('users/register');
         }

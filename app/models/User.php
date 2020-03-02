@@ -19,4 +19,17 @@ class User
             return false;
         }
     }
+    // register user
+    public function register($data){
+        $this->db->query('INSERT INTO users (name, email, pass) VALUES (:name, :email, :pass)');
+        $this->db->bind(':name', $data['name']);
+        $this->db->bind(':email', $data['email']);
+        $this->db->bind(':pass', $data['pass']);
+        if($this->db->execute()){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }
