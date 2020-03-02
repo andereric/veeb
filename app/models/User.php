@@ -34,13 +34,13 @@ class User
 
 
     // login user
-    public function login($data){
-        $this->db->query('INSERT INTO users (name, email, pass) VALUES (:name, :email, :pass)');
-        $this->db->bind(':name', $data['name']);
-        $this->db->bind(':email', $data['email']);
-        $this->db->bind(':pass', $data['pass']);
-        if($this->db->execute()){
-            return true;
+    public function login($email, $pass){
+        $this->db->query('SELECT * FROM users WHERE email=:email');
+        $this->db->bind(':email', $email);
+        $user = $this->db->getOne();
+        $userHashedPass = $user->pass;
+        if(password_verify($pass, $userHashedPass)){
+            return $user;
         } else {
             return false;
         }
