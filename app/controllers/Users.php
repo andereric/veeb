@@ -103,14 +103,14 @@ class Users extends Controller
             $this->view('users/register');
         }
     }
-    // create session
+    // create session 2
     public function createUserSession($user){
         $_SESSION['user_id'] = $user->id;
         $_SESSION['user_name'] = $user->name;
         $_SESSION['user_email'] = $user->email;
         header('Location: '.URLROOT);
     }
-    // logout user
+    // logout user 2
     public function logout(){
         session_unset();
         session_destroy();
