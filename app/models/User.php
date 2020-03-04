@@ -21,7 +21,7 @@ class User
     }
     // register user
     public function register($data){
-        $this->db->query('INSERT INTO users (name, email, pass) VALUES (:name, :email, :pass)');
+        $this->db->query('INSERT INTO users (name, email, pass) VALUES (:name, :email, :pass )');
         $this->db->bind(':name', $data['name']);
         $this->db->bind(':email', $data['email']);
         $this->db->bind(':pass', $data['pass']);
@@ -31,8 +31,6 @@ class User
             return false;
         }
     }
-
-
     // login user
     public function login($email, $pass){
         $this->db->query('SELECT * FROM users WHERE email=:email');
