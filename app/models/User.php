@@ -1,10 +1,7 @@
 <?php
-
-
 class User
 {
     private $db;
-
     public function __construct(){
         $this->db = new Database();
     }
@@ -42,5 +39,12 @@ class User
         } else {
             return false;
         }
+    }
+    // get user by id
+    public function getUserById($id){
+        $this->db->query('SELECT * FROM users WHERE id=:id');
+        $this->db->bind(':id', $id);
+        $user = $this->db->getOne();
+        return $user;
     }
 }

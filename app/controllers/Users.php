@@ -117,4 +117,5 @@ class Users extends Controller
         session_destroy();
         redirect();
     }
+
 }
