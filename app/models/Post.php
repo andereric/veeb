@@ -36,4 +36,18 @@ class Post
         return $post;
     }
 
+    public function addPost($data){
+        $this->db->query('INSERT INTO posts (title, user_id, content) VALUES (:title, :user_id, :content)');
+        $this->db->bind(':title', $data['title']);
+        $this->db->bind(':user_id', $data['user_id']);
+        $this->db->bind(':content', $data['content']);
+        if($this->db->execute()){
+            // query is submitted
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
 }
