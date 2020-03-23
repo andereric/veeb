@@ -1,4 +1,9 @@
 <?php require_once APPROOT.'/views/inc/header.php';?>
+<?php
+echo '<pre>';
+print_r($data);
+echo '</pre>';
+?>
 all posts of my blog
 <div class="row mb-3">
     <div class="col">

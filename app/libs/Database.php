@@ -66,7 +66,7 @@ class Database
     }
     // get row record
     public function rowCount(){
-        return $this->stmt->rowCount;
+        return $this->stmt->rowCount(); // viga oli siin, kutsusid mitte meetodi, vaid välja, aga sedapolnud
     }
 
 
