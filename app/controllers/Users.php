@@ -95,7 +95,7 @@ class Users extends Controller
                     flashSet('register_success', 'You are registered and can log in', 'alert alert-info');
                     redirect('users/login');
                 } else {
-                    die('Something went wrong');
+                    die('Sometrhing went wrong');
                 }
             } else {
                 $this->view('users/register', $data);
@@ -104,18 +104,17 @@ class Users extends Controller
             $this->view('users/register');
         }
     }
-    // create session 2
+    // create session
     public function createUserSession($user){
         $_SESSION['user_id'] = $user->id;
         $_SESSION['user_name'] = $user->name;
         $_SESSION['user_email'] = $user->email;
         redirect();
     }
-    // logout user 2
+    // logout user
     public function logout(){
         session_unset();
         session_destroy();
         redirect();
     }
-
 }

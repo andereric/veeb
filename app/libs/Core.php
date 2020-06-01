@@ -29,11 +29,13 @@ class Core
                 unset($url[1]);
             }
         }
-        // set up params
+// set up params
         $this->params = $url ? array_values($url) : array();
-        // call a callback function with array of params
+
+// call a callback function with array of params
         call_user_func_array(array($this->currentController, $this->currentMethod), $this->params);
     }
+
     // get url from link and prepare for use
     public function getUrl(){
         if(isset($_GET['url'])){

@@ -1,6 +1,6 @@
 <?php require_once APPROOT.'/views/inc/header.php';?>
 <h1>Add post</h1>
-<p>Create post with this form</p>
+<p>Create a post with this form</p>
 <form action="<?php echo URLROOT;?>/posts/add" method="post">
     <div class="form-group">
         <label for="title">Title</label>
@@ -15,6 +15,6 @@
       </textarea>
         <span class="invalid-feedback"><?php echo $data['content_err'];?></span>
     </div>
-    <input type="submit" value="Submit" class="btn btn-success">
+    <input type="submit" value="Submit" class="btn btn-dark">
 </form>
 <?php require_once APPROOT.'/views/inc/footer.php';?>
